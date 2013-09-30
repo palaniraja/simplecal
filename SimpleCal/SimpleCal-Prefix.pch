@@ -1,0 +1,34 @@
+//
+// Prefix header for all source files of the 'SimpleCal' target in the 'SimpleCal' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+
+
+#define DEBUGG 1
+
+#if defined(DEBUGG) && DEBUGG
+#    define DLog(...) NSLog(__VA_ARGS__)
+#else
+#    define DLog(...)  
+#endif
+
+
+
+#define WHERE 1
+
+#if defined(WHERE) && WHERE
+# define hereiam NSLog(@"--DBG:%s Line:%d", __PRETTY_FUNCTION__, __LINE__);
+#else
+#    define hereiam  
+#endif
